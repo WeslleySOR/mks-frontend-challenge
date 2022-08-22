@@ -51,7 +51,7 @@ export const Main = styled.main`
   }
 `
 
-export const Footer = styled.footer`
+export const Footer = styled.button`
   background-color: #0F52BA;
   color: #fff;
   border-radius: 0px 0px 8px 8px;
@@ -60,6 +60,8 @@ export const Footer = styled.footer`
   justify-content: center;
   align-items: center;
   gap: 16px;
+  border: none;
+  width: 100%;
   span {
     font-weight: 600;
     font-size: 14px;
