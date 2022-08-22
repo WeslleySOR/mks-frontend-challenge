@@ -11,7 +11,7 @@ export function Product({ product }: ProductProps) {
   return (
     <SC.Container>
       <SC.Header>
-        <Image src='/iphone-x.png' width='130px' height='160px'/>
+        <Image src={product.photo} width='130px' height='160px'/>
       </SC.Header>
       <SC.Main>
         <div>
