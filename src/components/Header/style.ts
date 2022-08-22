@@ -28,14 +28,15 @@ export const Logo = styled.div`
   }
 `
 
-export const Cart = styled.div`
+export const Cart = styled.button`
+  border: none;
   background-color: #fff;
   border-radius: 8px;
-  height: 26px;
   display: flex;
-  align-items: center;
+  justify-content: center;
+  text-align: center;
   gap: 10px;
-  padding: 8px;
+  padding: 6px 8px;
   margin-left: auto;
   span {
     font-weight: 700;
