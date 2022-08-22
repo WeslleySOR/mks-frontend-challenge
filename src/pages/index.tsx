@@ -1,15 +1,20 @@
 import Head from "next/head";
+import { Product } from "../components/Product";
+
+import * as SC from '../styles/index'
 
 export default function Home() {
   return (
-    <div>
+    <SC.Container>
       <Head>
         <title>MKS Sistemas</title>
         <meta name="description" content="Next-app website developed to challenge" />
       </Head>
-      <main>
-        <h1>Home</h1>
-      </main>
-    </div>
+      <SC.Main>
+        <Product/>
+        <Product/>
+        <Product/>
+      </SC.Main>
+    </SC.Container>
   );
 }

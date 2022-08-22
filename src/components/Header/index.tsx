@@ -1,17 +1,17 @@
 import Image from "next/image";
-import { Cart, Container, Logo } from "./style";
+import * as SC from "./style";
 
 export function Header() {
   return (
-    <Container>
-      <Logo>
+    <SC.Container>
+      <SC.Logo>
         <span>MKS</span>
         <span>Sistemas</span>
-      </Logo>
-      <Cart>
+      </SC.Logo>
+      <SC.Cart>
         <Image src='/cart-icon.svg' width='12px' height='12px'/>
         <span>0</span>
-      </Cart>
-    </Container>
+      </SC.Cart>
+    </SC.Container>
   )
 }
