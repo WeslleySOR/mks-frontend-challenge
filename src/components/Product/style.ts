@@ -21,6 +21,8 @@ export const Main = styled.main`
   padding: 16px;
   > div {
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 4px;
     > span {
       color: #2c2c2c;
@@ -52,6 +54,7 @@ export const Main = styled.main`
 `
 
 export const Footer = styled.button`
+  cursor: pointer;
   background-color: #0F52BA;
   color: #fff;
   border-radius: 0px 0px 8px 8px;

@@ -1,20 +1,26 @@
 import Image from "next/image";
+import { ProductType } from '../../types/types'
+
 import * as SC from "./style";
 
-export function Product() {
+interface ProductProps {
+  product: ProductType;
+}
+
+export function Product({ product }: ProductProps) {
   return (
     <SC.Container>
       <SC.Header>
-        <Image src='/apple-watch.png' width='130px' height='158px'/>
+        <Image src='/iphone-x.png' width='130px' height='160px'/>
       </SC.Header>
       <SC.Main>
         <div>
-          <span>Apple Watch Series 4 GPS</span>
+          <span>{product.name}</span>
           <div>
-            <span>R$399</span>
+            <span>{new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.price)}</span>
           </div>
         </div>
-        <span>Redesigned from scratch and completely revised.</span>
+        <span>{product.description}</span>
       </SC.Main>
       <SC.Footer>
         <Image src='/shopping-bag.svg' width='15px' height='15px'/>
