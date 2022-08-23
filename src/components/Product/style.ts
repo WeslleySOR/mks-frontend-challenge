@@ -1,27 +1,31 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 344px;
   width: 250px;
   border-radius: 8px;
   background-color: #fff;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.135216);
-`
+`;
 
 export const Header = styled.header`
   display: flex;
   justify-content: center;
   padding-top: 20px;
   padding-inline: 60px;
-`
+`;
 
 export const Main = styled.main`
   display: flex;
   flex-direction: column;
   gap: 9px;
-  padding: 16px;
+  padding: 8px;
   > div {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 4px;
     > span {
@@ -51,11 +55,11 @@ export const Main = styled.main`
     line-height: 12px;
     color: #2c2c2c;
   }
-`
+`;
 
 export const Footer = styled.button`
   cursor: pointer;
-  background-color: #0F52BA;
+  background-color: #0f52ba;
   color: #fff;
   border-radius: 0px 0px 8px 8px;
   padding-block: 10px;
@@ -70,4 +74,4 @@ export const Footer = styled.button`
     font-size: 14px;
     line-height: 18px;
   }
-`
+`;

@@ -26,9 +26,10 @@ export const Logo = styled.div`
       font-size: 16px;
     }
   }
-`
+`;
 
 export const Cart = styled.button`
+  cursor: pointer;
   border: none;
   background-color: #fff;
   border-radius: 8px;
@@ -44,4 +45,4 @@ export const Cart = styled.button`
     line-height: 15px;
     color: #000;
   }
-`
+`;

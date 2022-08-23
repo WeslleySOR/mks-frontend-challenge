@@ -1,9 +1,9 @@
 export interface ApiResponse {
-  products: ProductType[];
-  count: number
+  products: IProduct[];
+  count: number;
 }
 
-export interface ProductType {
+export interface IProduct {
   id: number;
   name: string;
   brand: string;

@@ -5,5 +5,5 @@ export function Footer() {
     <Container>
       <span>MKS Sistemas © Todos os direitos reservados</span>
     </Container>
-  )
+  );
 }
