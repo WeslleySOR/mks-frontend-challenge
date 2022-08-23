@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -18,7 +19,7 @@ export const Main = styled.main`
   flex-direction: column;
   gap: 14px;
   align-items: center;
-  span {
+  > span {
     font-weight: 400;
     font-size: 12px;
     line-height: 15px;
@@ -49,8 +50,8 @@ export const CustomInput = styled.div`
     color: #000;
   }
   span {
-    padding: 11px;
-    font-weight: 400;
+    padding: 11px 5px;
+    font-weight: 500;
     font-size: 10px;
     line-height: 14px;
     color: #000;
@@ -71,3 +72,16 @@ export const ProductTotal = styled.div`
     padding: 17px 8px;
   }
 `;
+
+export const ProductRemoveButton = styled.button`
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  span{
+    font-weight: 400;
+  font-size: 42px;
+  line-height: 17px;
+  }
+`

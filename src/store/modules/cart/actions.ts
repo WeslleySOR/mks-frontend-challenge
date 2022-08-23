@@ -8,3 +8,21 @@ export function addProductToCart(product: IProductCart) {
     },
   };
 }
+
+export function removeProductFromCart(product: IProductCart) {
+  return {
+    type: "REMOVE_PRODUCT_FROM_CART",
+    payload: {
+      product,
+    },
+  };
+}
+
+export function deleteProductFromCart(product: IProductCart) {
+  return {
+    type: "DELETE_PRODUCT_FROM_CART",
+    payload: {
+      product,
+    },
+  };
+}

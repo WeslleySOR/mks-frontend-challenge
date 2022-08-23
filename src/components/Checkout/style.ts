@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Checkout = styled.div<{ isOpenedCart: boolean }>`
   display: flex;
   flex-direction: column;
-  background-color: #0F52BA;
+  background-color: #0f52ba;
   width: 80%;
   box-shadow: -5px 0px 6px rgba(0, 0, 0, 0.13);
   position: absolute;
@@ -11,20 +11,20 @@ export const Checkout = styled.div<{ isOpenedCart: boolean }>`
   bottom: 0;
   right: calc(-81%);
   transition: transform 0.6s;
-  transform: ${(props) => (props.isOpenedCart ? 'translateX(-100%)' : "translateX(0)")};
+  transform: ${(props) =>
+    props.isOpenedCart ? "translateX(-100%)" : "translateX(0)"};
   > header {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding: 35px;
+    padding: 25px;
     span {
       font-weight: 700;
-      font-size: 27px;
-      line-height: 33px;
+      font-size: 18px;
+      line-height: 24px;
       color: #fff;
     }
     button {
-      height: fit-content;
-      width: fit-content;
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -35,11 +35,24 @@ export const Checkout = styled.div<{ isOpenedCart: boolean }>`
     }
   }
   > main {
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 13px;
     padding-block: 55px;
+    > div {
+      margin-top: auto;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      span {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 7px;
+        color: #fff;
+      }
+    }
   }
   > footer {
     display: flex;
