@@ -46,3 +46,9 @@ export const Cart = styled.button`
     color: #000;
   }
 `;
+
+export const CartNextImage = styled.div`
+  position: relative;
+  width: 12px;
+  height: 12px;
+`

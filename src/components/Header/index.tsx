@@ -13,9 +13,10 @@ interface HeaderProps {
 export function Header({ handleOpenedCard }: HeaderProps) {
   const cart = useSelector<IState, ICartItem[]>((state) => state.cart.items);
 
-  var total = cart.reduce(function(res,item) {
-    return res + (item.quantity);
+  var quantityItemsSum = cart.reduce(function (res, item) {
+    return res + item.quantity;
   }, 0);
+
   return (
     <SC.Container>
       <SC.Logo>
@@ -23,8 +24,15 @@ export function Header({ handleOpenedCard }: HeaderProps) {
         <span>Sistemas</span>
       </SC.Logo>
       <SC.Cart onClick={handleOpenedCard}>
-        <Image src="/cart-icon.svg" width="12px" height="12px" />
-        <span>{total}</span>
+        <SC.CartNextImage>
+          <Image
+            src="/cart-icon.svg"
+            alt="Cart Icon"
+            layout="fill"
+            objectFit="contain"
+          />
+        </SC.CartNextImage>
+        <span>{quantityItemsSum}</span>
       </SC.Cart>
     </SC.Container>
   );

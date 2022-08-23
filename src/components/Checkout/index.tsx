@@ -15,33 +15,37 @@ interface ICheckout {
 export function Checkout({ isOpenedCart, handleOpenedCart }: ICheckout) {
   const cart = useSelector<IState, ICartItem[]>((state) => state.cart.items);
 
-  var total = cart.reduce(function(res,item) {
-    return res + (item.product.price * item.quantity);
+  var total = cart.reduce(function (res, item) {
+    return res + item.product.price * item.quantity;
   }, 0);
 
   return (
     <SC.Checkout isOpenedCart={isOpenedCart}>
-      <header>
+      <SC.CheckoutHeader>
         <span>Carrinho de compras</span>
-        <button onClick={handleOpenedCart}>
-          <Image src="/Close_cart.svg" width="60px" height="60px" />
-        </button>
-      </header>
-      <main>
+        <SC.CloseCheckoutButton onClick={handleOpenedCart}>
+          X
+        </SC.CloseCheckoutButton>
+      </SC.CheckoutHeader>
+      <SC.CheckoutMain>
         {cart.map((item) => (
           <ItemCart key={item.product.id} item={item} />
         ))}
-        <div>
+      </SC.CheckoutMain>
+      <SC.CheckoutFooter>
+        <SC.CheckoutTotalPrice>
           <span>Total:</span>
-          <span>{new Intl.NumberFormat("pt-BR", {
+          <span>
+            {new Intl.NumberFormat("pt-BR", {
               style: "currency",
               currency: "BRL",
-            }).format(total)}</span>
-        </div>
-      </main>
-      <footer>
-        <span>Finalizar Compra</span>
-      </footer>
+            }).format(total)}
+          </span>
+        </SC.CheckoutTotalPrice>
+        <SC.FinalizePurchaseButton>
+          <span>Finalizar Compra</span>
+        </SC.FinalizePurchaseButton>
+      </SC.CheckoutFooter>
     </SC.Checkout>
   );
 }

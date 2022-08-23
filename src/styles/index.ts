@@ -1,12 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  display: flex;
   position: relative;
   overflow-x: hidden;
-`;
-
-export const Content = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -15,6 +11,8 @@ export const Content = styled.div`
 `;
 
 export const Main = styled.main`
+  max-height: calc(100vh - 85px);
+  overflow-y: auto;
   padding-block: 18px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 250px));

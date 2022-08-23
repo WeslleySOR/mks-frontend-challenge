@@ -27,26 +27,34 @@ export function Product({ product }: ProductProps) {
   return (
     <SC.Container>
       <SC.Header>
-        <Image src={product.photo} width="130px" height="160px" />
+        <Image
+          src={product.photo}
+          alt={`${product.name} Picture`}
+          width="130px"
+          height="160px"
+        />
       </SC.Header>
       <SC.Main>
-        <div>
+        <SC.ProductInfo>
           <span>{product.name}</span>
-          <div>
+          <SC.ProductPrice>
             <span>
               {new Intl.NumberFormat("pt-BR", {
                 style: "currency",
                 currency: "BRL",
               }).format(product.price)}
             </span>
-          </div>
-        </div>
+          </SC.ProductPrice>
+        </SC.ProductInfo>
         <span>{product.description}</span>
       </SC.Main>
-      <SC.Footer
-        onClick={() => handleAddProductToCart()}
-      >
-        <Image src="/shopping-bag.svg" width="15px" height="15px" />
+      <SC.Footer onClick={() => handleAddProductToCart()}>
+        <Image
+          src="/shopping-bag.svg"
+          alt="Bag Icon"
+          width="15px"
+          height="15px"
+        />
         <span>COMPRAR</span>
       </SC.Footer>
     </SC.Container>

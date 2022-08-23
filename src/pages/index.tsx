@@ -32,16 +32,17 @@ export default function Home({ apiResponse }: HomeProps) {
         />
       </Head>
       <SC.Container>
-        <SC.Content>
-          <Header handleOpenedCard={handleOpenedCart} />
-          <SC.Main>
-            {apiResponse.products.map((product) => {
-              return <Product key={product.id} product={product} />;
-            })}
-          </SC.Main>
-          <Footer />
-        </SC.Content>
-        <Checkout isOpenedCart={isOpenedCart} handleOpenedCart={handleOpenedCart}/>
+        <Header handleOpenedCard={handleOpenedCart} />
+        <SC.Main>
+          {apiResponse.products.map((product) => {
+            return <Product key={product.id} product={product} />;
+          })}
+        </SC.Main>
+        <Footer />
+        <Checkout
+          isOpenedCart={isOpenedCart}
+          handleOpenedCart={handleOpenedCart}
+        />
       </SC.Container>
     </>
   );

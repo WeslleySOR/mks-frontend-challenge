@@ -53,18 +53,25 @@ export function ItemCart({ item }: ItemProps) {
 
   return (
     <SC.Container>
-      <SC.ProductRemoveButton
-        onClick={() => handleDeleteItemFromCart()}
-      >X</SC.ProductRemoveButton>
+      <SC.ProductRemoveButton onClick={() => handleDeleteItemFromCart()}>
+        X
+      </SC.ProductRemoveButton>
       <SC.Main>
-        <Image src={item.product.photo} width="60px" height="75px" />
+        <SC.ProductNextImage>
+          <Image src={item.product.photo} layout="fill" objectFit="contain" />
+        </SC.ProductNextImage>
         <span>{item.product.name}</span>
       </SC.Main>
       <SC.Footer>
         <SC.CustomInput>
-          <button onClick={() => handleRemoveItemFromCart()}>-</button>
-          <span>{item.quantity}</span>
-          <button onClick={() => handleAddItemToCart()}>+</button>
+          <span>Qtd:</span>
+          <SC.CustomInputButton onClick={() => handleRemoveItemFromCart()}>
+            -
+          </SC.CustomInputButton>
+          <SC.CustomInputSpan>{item.quantity}</SC.CustomInputSpan>
+          <SC.CustomInputButton onClick={() => handleAddItemToCart()}>
+            +
+          </SC.CustomInputButton>
         </SC.CustomInput>
         <SC.ProductTotal>
           <span>

@@ -5,7 +5,6 @@ import rootReducer from "./modules/rootReducer";
 
 export interface IState {
   cart: ICartState;
-  checkout: boolean;
 }
 
 const store = configureStore({

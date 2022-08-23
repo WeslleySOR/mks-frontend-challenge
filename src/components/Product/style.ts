@@ -23,37 +23,39 @@ export const Main = styled.main`
   flex-direction: column;
   gap: 9px;
   padding: 8px;
-  > div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 4px;
-    > span {
-      color: #2c2c2c;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 19px;
-    }
-    > div {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #373737;
-      border-radius: 5px;
-      span {
-        color: #fff;
-        font-weight: 700;
-        font-size: 15px;
-        line-height: 15px;
-        padding: 11px 5px;
-      }
-    }
-  }
   > span {
     font-weight: 300;
     font-size: 10px;
     line-height: 12px;
     color: #2c2c2c;
+  }
+`;
+
+export const ProductInfo = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+  span {
+    color: #2c2c2c;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+  }
+`;
+
+export const ProductPrice = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #373737;
+  border-radius: 5px;
+  span {
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 15px;
+    padding: 11px 5px;
   }
 `;
 
