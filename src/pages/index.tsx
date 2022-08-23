@@ -1,26 +1,21 @@
 import Head from "next/head";
-import Image from "next/image";
 import { useState } from "react";
 import { api } from "../services/instance";
-
-import { useSelector } from "react-redux";
 
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { Product } from "../components/Product";
+import { Checkout } from "../components/Checkout";
 
 import { ApiResponse } from "../types/types";
 
 import * as SC from "../styles/index";
-import { IState } from "../store";
-import { ICartItem } from "../store/modules/cart/types";
 
 interface HomeProps {
   apiResponse: ApiResponse;
 }
 
 export default function Home({ apiResponse }: HomeProps) {
-  const cart = useSelector<IState, ICartItem[]>((state) => state.cart.items);
   const [isOpenedCart, setIsOpenedCart] = useState(false);
 
   const handleOpenedCart = () => {
@@ -46,51 +41,7 @@ export default function Home({ apiResponse }: HomeProps) {
           </SC.Main>
           <Footer />
         </SC.Content>
-        <SC.Cart isOpenedCart={isOpenedCart}>
-          <header>
-            <span>Carrinho de compras</span>
-            <button onClick={handleOpenedCart}>
-              <Image src="/Close_cart.svg" width="40px" height="40px" />
-            </button>
-          </header>
-          <main>
-            <table>
-              <thead>
-                <tr>
-                  <th>Produto</th>
-                  <th>Preço</th>
-                  <th>Quantidade</th>
-                  <th>Subtotal</th>
-                </tr>
-              </thead>
-              <tbody>
-                {cart.map((item) => (
-                  <tr key={item.product.id}>
-                    <td>{item.product.name}</td>
-                    <td>
-                      {new Intl.NumberFormat("pt-BR", {
-                        style: "currency",
-                        currency: "BRL",
-                      }).format(item.product.price)}
-                    </td>
-                    <td>{item.quantity}</td>
-                    <td>
-                      {new Intl.NumberFormat("pt-BR", {
-                        style: "currency",
-                        currency: "BRL",
-                      }).format(
-                        item.product.price * item.quantity
-                      )}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </main>
-          <footer>
-            <span>Finalizar Compra</span>
-          </footer>
-        </SC.Cart>
+        <Checkout isOpenedCart={isOpenedCart} handleOpenedCart={handleOpenedCart}/>
       </SC.Container>
     </>
   );
