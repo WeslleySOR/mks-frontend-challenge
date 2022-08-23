@@ -18,7 +18,7 @@ export const Checkout = styled.div<{ isOpenedCart: boolean }>`
     width: 35%;
     right: -35%;
     transform: ${(props) =>
-    props.isOpenedCart ? "translateX(10%)" : "translateX(-100%)"};
+      props.isOpenedCart ? "translateX(-100%)" : "translateX(10%)"};
   }
 `;
 
@@ -70,7 +70,7 @@ export const CloseCheckoutButton = styled.button`
   justify-content: center;
   cursor: pointer;
   background: #000;
-  color: #0F52BA;
+  color: #0f52ba;
   font-weight: 400;
   font-size: 24px;
   line-height: 15px;

@@ -54,7 +54,7 @@ export const ProductNextImage = styled.div`
     height: 96px;
     width: 84px;
   }
-`
+`;
 
 export const CustomInput = styled.div`
   position: relative;
@@ -84,7 +84,7 @@ export const CustomInputSpan = styled.span`
   color: #000;
   &::before {
     position: absolute;
-    content: '';
+    content: "";
     top: 7.5px;
     left: -10px;
     width: 0.5px;
@@ -93,7 +93,7 @@ export const CustomInputSpan = styled.span`
   }
   &::after {
     position: absolute;
-    content: '';
+    content: "";
     top: 7.5px;
     right: -10px;
     width: 0.5px;
@@ -159,7 +159,7 @@ export const ProductRemoveButton = styled.button`
     font-size: 42px;
     line-height: 17px;
   }
-  @media (min-width: 1008px) { 
+  @media (min-width: 1008px) {
     top: -14px;
     right: -14px;
     background: #000;

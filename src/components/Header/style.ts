@@ -51,4 +51,4 @@ export const CartNextImage = styled.div`
   position: relative;
   width: 12px;
   height: 12px;
-`
+`;
