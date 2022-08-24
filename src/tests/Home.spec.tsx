@@ -1,8 +1,8 @@
-import { render as rtlRender, screen, fireEvent, getByLabelText, getByTestId } from "@testing-library/react";
+import { render as rtlRender, screen, fireEvent, getByTestId } from "@testing-library/react";
 
 import { Provider } from 'react-redux'
 import store from '../store'
-import Home from "./index";
+import Home from "../pages/index";
 import { ApiResponse } from "../types/types";
 
 const render = (component: JSX.Element) => rtlRender(

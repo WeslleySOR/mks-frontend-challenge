@@ -29,5 +29,6 @@
 - Após a instalação das dependencias do projeto com o `yarn`, utilizar o comando: `yarn test`
 - <details>
   <summary>Screenshot mostrando os testes</summary>
+  
   ![Testes](./.github/jest.png)
 </details>

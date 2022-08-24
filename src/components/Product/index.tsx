@@ -22,7 +22,7 @@ export function Product({ product }: ProductProps) {
         price: product.price,
       })
     );
-  }, [dispatch]);
+  }, [dispatch, product.id, product.name, product.photo, product.price]);
 
   return (
     <SC.Container>

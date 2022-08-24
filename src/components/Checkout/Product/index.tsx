@@ -27,7 +27,7 @@ export function ItemCart({ item }: ItemProps) {
         price: item.product.price,
       })
     );
-  }, [dispatch]);
+  }, [dispatch, item.product.id, item.product.name, item.product.photo, item.product.price]);
 
   const handleRemoveItemFromCart = useCallback(() => {
     dispatch(
@@ -49,7 +49,7 @@ export function ItemCart({ item }: ItemProps) {
         price: item.product.price,
       })
     );
-  }, [dispatch]);
+  }, [dispatch, item.product.id, item.product.name, item.product.photo, item.product.price]);
 
   return (
     <SC.Container>
