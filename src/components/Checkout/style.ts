@@ -14,6 +14,12 @@ export const Checkout = styled.div<{ isOpenedCart: boolean }>`
   transition: transform 0.6s;
   transform: ${(props) =>
     props.isOpenedCart ? "translateX(-100%)" : "translateX(0)"};
+  @media (min-width: 1024px) {
+    width: 50%;
+    right: -50%;
+    transform: ${(props) =>
+      props.isOpenedCart ? "translateX(-100%)" : "translateX(10%)"};
+  }
   @media (min-width: 1440px) {
     width: 35%;
     right: -35%;
@@ -34,7 +40,7 @@ export const CheckoutHeader = styled.header`
     color: #fff;
   }
   @media (min-width: 1440px) {
-    padding: 28px;
+    padding: 30px;
     span {
       font-size: 27px;
       line-height: 33px;
@@ -52,7 +58,7 @@ export const CheckoutMain = styled.main`
   max-height: calc(100vh - 178px);
   overflow-y: auto;
   @media (min-width: 1440px) {
-    gap: 28px;
+    gap: 20px;
   }
 `;
 
@@ -78,7 +84,7 @@ export const CloseCheckoutButton = styled.button`
   border-radius: 50%;
   height: 38px;
   width: 38px;
-  @media (min-width: 1440px) {
+  @media (min-width: 1024px) {
     font-size: 28px;
     color: #fff;
   }
@@ -98,7 +104,7 @@ export const CheckoutTotalPrice = styled.div`
   }
   @media (min-width: 1440px) {
     span {
-      font-size: 28px;
+      font-size: 24px;
       line-height: 15px;
     }
   }
@@ -119,7 +125,7 @@ export const FinalizePurchaseButton = styled.button`
   @media (min-width: 1440px) {
     padding: 40px 75px;
     span {
-      font-size: 28px;
+      font-size: 24px;
       line-height: 15px;
     }
   }

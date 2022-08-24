@@ -4,7 +4,7 @@ export const Container = styled.section`
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 12px;
   padding: 22px 16px;
   height: 190px;
@@ -12,10 +12,10 @@ export const Container = styled.section`
   background: #ffffff;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.135216);
   border-radius: 8px;
-  @media (min-width: 1008px) {
+  @media (min-width: 1024px) {
     flex-direction: row;
     height: 115px;
-    width: 496px;
+    width: 85%;
   }
 `;
 
@@ -30,7 +30,7 @@ export const Main = styled.main`
     line-height: 15px;
     color: #2c2c2c;
   }
-  @media (min-width: 1008px) {
+  @media (min-width: 1024px) {
     flex-direction: row;
     span {
       font-size: 13px;
@@ -50,7 +50,7 @@ export const ProductNextImage = styled.div`
   position: relative;
   height: 75px;
   width: 60px;
-  @media (min-width: 1008px) {
+  @media (min-width: 1024px) {
     height: 96px;
     width: 84px;
   }
@@ -100,7 +100,7 @@ export const CustomInputSpan = styled.span`
     height: calc(100% - 15px);
     background-color: #bfbfbf;
   }
-  @media (min-width: 1008px) {
+  @media (min-width: 1024px) {
     font-weight: 400;
     font-size: 13px;
     line-height: 17px;
@@ -131,7 +131,7 @@ export const ProductTotal = styled.div`
     line-height: 8px;
     padding: 17px 8px;
   }
-  @media (min-width: 1008px) {
+  @media (min-width: 1024px) {
     background: none;
     span {
       color: #000;
@@ -159,7 +159,7 @@ export const ProductRemoveButton = styled.button`
     font-size: 42px;
     line-height: 17px;
   }
-  @media (min-width: 1008px) {
+  @media (min-width: 1024px) {
     top: -14px;
     right: -14px;
     background: #000;
