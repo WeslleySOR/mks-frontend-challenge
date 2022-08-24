@@ -3,7 +3,7 @@ import Document, { Main, Html, Head, NextScript } from "next/document";
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html>
+      <Html lang="pt">
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
