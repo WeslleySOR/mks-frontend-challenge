@@ -48,7 +48,7 @@ export function Product({ product }: ProductProps) {
         </SC.ProductInfo>
         <span>{product.description}</span>
       </SC.Main>
-      <SC.Footer onClick={() => handleAddProductToCart()}>
+      <SC.Footer data-testid="buy-product-button" onClick={() => handleAddProductToCart()}>
         <Image
           src="/shopping-bag.svg"
           alt="Bag Icon"

@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest"
+    "test": "jest",
+    "covarage": "jest --collectCoverage"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",

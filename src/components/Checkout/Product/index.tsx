@@ -53,7 +53,7 @@ export function ItemCart({ item }: ItemProps) {
 
   return (
     <SC.Container>
-      <SC.ProductRemoveButton onClick={() => handleDeleteItemFromCart()}>
+      <SC.ProductRemoveButton data-testid="delete-product-button" onClick={() => handleDeleteItemFromCart()}>
         X
       </SC.ProductRemoveButton>
       <SC.Main>
@@ -65,11 +65,11 @@ export function ItemCart({ item }: ItemProps) {
       <SC.Footer>
         <SC.CustomInput>
           <span>Qtd:</span>
-          <SC.CustomInputButton onClick={() => handleRemoveItemFromCart()}>
+          <SC.CustomInputButton data-testid="remove-product-button" onClick={() => handleRemoveItemFromCart()}>
             -
           </SC.CustomInputButton>
           <SC.CustomInputSpan>{item.quantity}</SC.CustomInputSpan>
-          <SC.CustomInputButton onClick={() => handleAddItemToCart()}>
+          <SC.CustomInputButton data-testid="add-product-button" onClick={() => handleAddItemToCart()}>
             +
           </SC.CustomInputButton>
         </SC.CustomInput>

@@ -1,4 +1,4 @@
-import { render as rtlRender, screen } from "@testing-library/react";
+import { render as rtlRender, screen, fireEvent, getByLabelText, getByTestId } from "@testing-library/react";
 
 import { Provider } from 'react-redux'
 import store from '../store'
@@ -64,6 +64,53 @@ describe("Home Tests", () => {
 			);
       expect(screen.getByText('Iphone 11 128 GB')).toBeInTheDocument();
       expect(screen.getByText('Grave vídeos 4K, faça belos retratos e capture paisagens inteiras com o novo sistema de câmera dupla.')).toBeInTheDocument();
+		});
+    it("Footer are on screen", async () => {
+			render(
+				<Home apiResponse={FAKE_API_RESPONSE} />
+			);
+			expect(screen.getByText("MKS Sistemas © Todos os direitos reservados")).toBeInTheDocument();
+		});
+  })
+  describe("Check if redux is functional", () => {
+    it("Buy button are functional, and add 1 on cart.", async () => {
+			const { container } = render(
+				<Home apiResponse={FAKE_API_RESPONSE} />
+			);
+      const button = getByTestId(container, 'buy-product-button');
+      fireEvent.click(button)
+			expect(screen.getByTestId("quantity-items-on-cart")).toHaveTextContent('1');
+		});
+    it("Remove 1 item button are functional, and remove 1 of this product from cart.", async () => {
+			const { container } = render(
+				<Home apiResponse={FAKE_API_RESPONSE} />
+			);
+      const button = getByTestId(container, 'buy-product-button');
+      fireEvent.click(button)
+      fireEvent.click(button)
+      const removeOneItemOfThisProductButton = getByTestId(container, 'remove-product-button');
+      fireEvent.click(removeOneItemOfThisProductButton)
+			expect(screen.getByTestId("quantity-items-on-cart")).toHaveTextContent('1');
+		});
+    it("Add 1 item button are functional, and add 1 of this product to cart.", async () => {
+			const { container } = render(
+				<Home apiResponse={FAKE_API_RESPONSE} />
+			);
+      const button = getByTestId(container, 'buy-product-button');
+      fireEvent.click(button)
+      const addOneItemOfThisProductButton = getByTestId(container, 'add-product-button');
+      fireEvent.click(addOneItemOfThisProductButton)
+			expect(screen.getByTestId("quantity-items-on-cart")).toHaveTextContent('2');
+		});
+    it("Delete product button are functional, and delete this product from cart.", async () => {
+			const { container } = render(
+				<Home apiResponse={FAKE_API_RESPONSE} />
+			);
+      const button = getByTestId(container, 'buy-product-button');
+      fireEvent.click(button)
+      const deleteOneItemOfThisProductButton = getByTestId(container, 'delete-product-button');
+      fireEvent.click(deleteOneItemOfThisProductButton)
+			expect(screen.getByTestId("quantity-items-on-cart")).toHaveTextContent('0');
 		});
   })
 });
