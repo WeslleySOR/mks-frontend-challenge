@@ -54,7 +54,7 @@ export function ItemCart({ item }: ItemProps) {
   return (
     <SC.Container>
       <SC.ProductRemoveButton data-testid="delete-product-button" onClick={() => handleDeleteItemFromCart()}>
-        X
+        <span>X</span>
       </SC.ProductRemoveButton>
       <SC.Main>
         <SC.ProductNextImage>

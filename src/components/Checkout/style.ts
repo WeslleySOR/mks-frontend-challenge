@@ -77,16 +77,21 @@ export const CloseCheckoutButton = styled.button`
   cursor: pointer;
   background: #000;
   color: #0f52ba;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 15px;
   border: none;
   border-radius: 50%;
-  height: 38px;
-  width: 38px;
+  padding: 12px;
+  span {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 15px;
+    color: #0F52BA;
+  }
   @media (min-width: 1024px) {
-    font-size: 28px;
-    color: #fff;
+    span {
+      font-weight: 400;
+      font-size: 28px;
+      color: #fff;
+    }
   }
 `;
 

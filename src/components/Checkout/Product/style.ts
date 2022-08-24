@@ -152,11 +152,9 @@ export const ProductRemoveButton = styled.button`
   right: 15px;
   background: none;
   border: none;
-  height: 35px;
-  width: 35px;
   span {
     font-weight: 400;
-    font-size: 42px;
+    font-size: 21px;
     line-height: 17px;
   }
   @media (min-width: 1024px) {

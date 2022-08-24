@@ -22,7 +22,7 @@ export function Checkout({ isOpenedCart, handleOpenedCart }: ICheckout) {
       <SC.CheckoutHeader>
         <span>Carrinho de compras</span>
         <SC.CloseCheckoutButton onClick={handleOpenedCart}>
-          X
+          <span>X</span>
         </SC.CloseCheckoutButton>
       </SC.CheckoutHeader>
       <SC.CheckoutMain>
