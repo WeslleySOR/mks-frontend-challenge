@@ -32,6 +32,7 @@ export function Product({ product }: ProductProps) {
           alt={`${product.name} Picture`}
           width="130px"
           height="160px"
+          priority={product.id === 0}
         />
       </SC.Header>
       <SC.Main>
