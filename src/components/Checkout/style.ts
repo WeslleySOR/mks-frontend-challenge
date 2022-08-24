@@ -80,6 +80,7 @@ export const CloseCheckoutButton = styled.button`
   border: none;
   border-radius: 50%;
   padding: 12px;
+  
   span {
     font-weight: 400;
     font-size: 24px;

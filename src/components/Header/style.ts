@@ -39,6 +39,10 @@ export const Cart = styled.button`
   gap: 10px;
   padding: 6px 8px;
   margin-left: auto;
+  transition: filter 0.2s;
+  &:hover {
+    filter: brightness(0.9);
+  }
   span {
     font-weight: 700;
     font-size: 12px;

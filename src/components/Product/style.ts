@@ -71,6 +71,9 @@ export const Footer = styled.button`
   gap: 16px;
   border: none;
   width: 100%;
+  &:active {
+    filter: brightness(0.8);
+  }
   span {
     font-weight: 600;
     font-size: 14px;
