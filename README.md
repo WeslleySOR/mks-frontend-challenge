@@ -1,34 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+###### Informações:
 
-## Getting Started
+- Aplicação responsiva, feita em mobile first.
+- Usei como base as dimensões Mobile P, 320x702.
+- Hospedado na vercel: [Link do projeto](https://mks-frontend-challenge-weslleysor.vercel.app/)
 
-First, run the development server:
+###### Versões utilizadas:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- Node: v16.17.0
+- Yarn: 1.22.19
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+###### Considerações:
+- Foi pedido para utilizar skeleton enquanto estiver em loading, porém o getStaticProps do Nextjs descarta essa opção, pois ele só carrega a página depois que a requisição for feita, logo o skeleton nunca apareceria na página.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+---
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+###### Como iniciar o projeto:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- Navegue até a pasta do projeto.
 
-## Learn More
+- Instale as dependencias do **projeto** utilizando o comando: `yarn`
 
-To learn more about Next.js, take a look at the following resources:
+- Para iniciar o projeto, utilize o comando `yarn dev`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Por padrão o projeto fica hospedado em `http://localhost:3000/`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+###### Realização de testes unitários:
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Após a instalação das dependencias do projeto com o `yarn`, utilizar o comando: `yarn test`
+- <details>
+  <summary>Screenshot mostrando os testes</summary>
+  ![Testes](./.github/jest.png)
+</details>
