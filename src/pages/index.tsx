@@ -1,8 +1,5 @@
 import Head from "next/head";
 import { useState } from "react";
-
-import { Skeleton, SkeletonCircle, SkeletonText } from "@chakra-ui/react";
-
 import { api } from "../services/instance";
 
 import { Footer } from "../components/Footer";
@@ -25,101 +22,6 @@ export default function Home({ apiResponse }: HomeProps) {
     setIsOpenedCart(!isOpenedCart);
   };
 
-  const renderProducts = () => {
-    return (
-      apiResponse.products.map((product) => 
-        <Product key={product.id} product={product} />
-      )
-    )
-  }
-
-  const renderSkeletonProducts = () => {
-    return (
-      <>
-        <Skeleton h="344px" w="250px">
-          <Product
-            product={{
-              id: 1,
-              name: "Iphone 11 128 GB",
-              brand: "Apple",
-              description:
-                "Grave vídeos 4K, faça belos retratos e capture paisagens inteiras com o novo sistema de câmera dupla.",
-              photo:
-                "https://mks-sistemas.nyc3.digitaloceanspaces.com/products/iphone11x128.webp",
-              price: 5000.0,
-              createdAt: "2022-08-21T19:30:29.567Z",
-              updatedAt: "2022-08-21T19:30:29.567Z",
-            }}
-          />
-        </Skeleton>
-        <Skeleton h="344px" w="250px">
-          <Product
-            product={{
-              id: 1,
-              name: "Iphone 11 128 GB",
-              brand: "Apple",
-              description:
-                "Grave vídeos 4K, faça belos retratos e capture paisagens inteiras com o novo sistema de câmera dupla.",
-              photo:
-                "https://mks-sistemas.nyc3.digitaloceanspaces.com/products/iphone11x128.webp",
-              price: 5000.0,
-              createdAt: "2022-08-21T19:30:29.567Z",
-              updatedAt: "2022-08-21T19:30:29.567Z",
-            }}
-          />
-        </Skeleton>
-        <Skeleton h="344px" w="250px">
-          <Product
-            product={{
-              id: 1,
-              name: "Iphone 11 128 GB",
-              brand: "Apple",
-              description:
-                "Grave vídeos 4K, faça belos retratos e capture paisagens inteiras com o novo sistema de câmera dupla.",
-              photo:
-                "https://mks-sistemas.nyc3.digitaloceanspaces.com/products/iphone11x128.webp",
-              price: 5000.0,
-              createdAt: "2022-08-21T19:30:29.567Z",
-              updatedAt: "2022-08-21T19:30:29.567Z",
-            }}
-          />
-        </Skeleton>
-        <Skeleton h="344px" w="250px">
-          <Product
-            product={{
-              id: 1,
-              name: "Iphone 11 128 GB",
-              brand: "Apple",
-              description:
-                "Grave vídeos 4K, faça belos retratos e capture paisagens inteiras com o novo sistema de câmera dupla.",
-              photo:
-                "https://mks-sistemas.nyc3.digitaloceanspaces.com/products/iphone11x128.webp",
-              price: 5000.0,
-              createdAt: "2022-08-21T19:30:29.567Z",
-              updatedAt: "2022-08-21T19:30:29.567Z",
-            }}
-          />
-        </Skeleton>
-        <Skeleton h="344px" w="250px">
-          <Product
-            product={{
-              id: 1,
-              name: "Iphone 11 128 GB",
-              brand: "Apple",
-              description:
-                "Grave vídeos 4K, faça belos retratos e capture paisagens inteiras com o novo sistema de câmera dupla.",
-              photo:
-                "https://mks-sistemas.nyc3.digitaloceanspaces.com/products/iphone11x128.webp",
-              price: 5000.0,
-              createdAt: "2022-08-21T19:30:29.567Z",
-              updatedAt: "2022-08-21T19:30:29.567Z",
-            }}
-          />
-        </Skeleton>
-      </>
-    );
-  };
-
   return (
     <>
       <Head>
@@ -131,8 +33,10 @@ export default function Home({ apiResponse }: HomeProps) {
       </Head>
       <SC.Container>
         <Header handleOpenedCard={handleOpenedCart} />
-        <SC.Main>          
-          {apiResponse.count <= 0 ? renderSkeletonProducts() : renderProducts()}
+        <SC.Main>
+          {apiResponse.products.map((product) => {
+            return <Product key={product.id} product={product} />;
+          })}
         </SC.Main>
         <Footer />
         <Checkout
