@@ -32,7 +32,7 @@ export function Header({ handleOpenedCard }: HeaderProps) {
             objectFit="contain"
           />
         </SC.CartNextImage>
-        <span>{quantityItemsSum}</span>
+        <span data-testid="quantity-items-on-cart">{quantityItemsSum}</span>
       </SC.Cart>
     </SC.Container>
   );

@@ -7,8 +7,9 @@ export interface IState {
   cart: ICartState;
 }
 
-const store = configureStore({
-  reducer: rootReducer,
-});
+const store = () =>
+  configureStore({
+    reducer: rootReducer,
+  });
 
 export default store;
